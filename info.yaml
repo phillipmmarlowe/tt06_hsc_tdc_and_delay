@@ -1,9 +1,9 @@
 # Tiny Tapeout project information - HSCTDC_FA2
 project:
   title:        "UCSC HW Systems Collective, TDC"
-  author:       "Tyler Sheaves, Phillip Marlowe, & Dustin Richmond"
-  discord:      "tsheaves"
-  description:  "A tiny TDC constructed entirely of standard cells. Skywater130 FA-2 delay element"
+  author:       "Phillip Marlowe, Tyler Sheaves, & Dustin Richmond"
+  discord:      "breachdat"
+  description:  "A tiny TDC constructed entirely of standard cells. Skywater130 AND-2 delay element"
   language:     "SystemVerilog"                                                          
   clock_hz:      17241379
 
