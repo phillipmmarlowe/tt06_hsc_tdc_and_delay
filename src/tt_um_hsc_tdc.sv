@@ -1,5 +1,6 @@
 `define default_netname none
-// `timescale 1ns/1ps
+`timescale 1ns/1ps
+
 module tt_um_hsc_tdc (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output reg  [7:0] uo_out,   // Dedicated outputs
@@ -14,7 +15,7 @@ module tt_um_hsc_tdc (
 assign uio_oe = 8'hFF;
 assign uio_out = 8'h00;
 
-localparam DL_TYPE = "RCA";
+localparam DL_TYPE = "DAND"; // editted from "RCA" to mux select DAND delay element
 localparam POP_METHOD = "SV";
 localparam N = 64;
 localparam N_SYNC = 1;
@@ -31,29 +32,10 @@ logic
     pg_src,
     pg_bypass,
     pg_in,
-    pg_tog,
-    val_in;
+    pg_tog;
 
 logic [N_o:0]
     hw;
-
-logic
-    val_out;
-
-generate
-    if(N_o+1 == 7) begin
-        always@(*) begin
-            uo_out[N_o:0] = hw;
-            uo_out[7] = val_out;
-        end
-    end else if(N_o+1 < 7) begin
-        always@(*) begin
-            uo_out[6:N_o+1] = {6-N_o{1'b0}}; 
-            uo_out[N_o:0] = hw;
-            uo_out[7] = val_out;
-        end
-    end
-endgenerate
 
 // Pin mapping
 always@(*) begin
@@ -63,7 +45,8 @@ always@(*) begin
     pg_bypass     = ui_in[3];
     pg_in         = ui_in[4];
     pg_tog        = ui_in[5];
-    val_in        = ui_in[6];
+    uo_out[7:N_o+1] = {7-N_o{1'b0}}; 
+    uo_out[N_o:0] = hw;
 end
 
 tdc_top #(
@@ -75,14 +58,12 @@ tdc_top #(
     .clk_launch(clk_launch),
     .clk_capture(clk_capture),
     .rst(!rst_n),
-    .en(ena),
-    .val_in(val_in),    
+    .en(ena),    
     .pg_src(pg_src),
     .pg_bypass(pg_bypass),
     .pg_in(pg_in),
     .pg_tog(pg_tog),
-    .hw(hw),
-    .val_out(val_out)
+    .hw(hw)
 );
 
 endmodule
