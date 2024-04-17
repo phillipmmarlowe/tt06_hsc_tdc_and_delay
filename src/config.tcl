@@ -32,7 +32,7 @@ set ::env(MACRO_PLACEMENT_CFG) [glob $::env(DESIGN_DIR)/place/macro_placement.cf
 set ::env(SYNTH_POWER_DEFINE) "USE_POWER_PINS"
 
 # Don't let OpenLane modify the delay line - willing to sacrafice performance for linnearity
-# source [glob $::env(DESIGN_DIR)/place/resizer_dont_touch.tcl]
+source [glob $::env(DESIGN_DIR)/place/resizer_dont_touch.tcl]
 
 # Configuration docs: https://openlane.readthedocs.io/en/latest/reference/configuration.html
 
