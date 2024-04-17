@@ -17,6 +17,7 @@ PROJECT_SOURCES = \
     tdc/tdc_top.sv \
     tdc/delay_line/tdc_delay_line.sv \
     tdc/delay_line/rca.sv \
+	tdc/delay_line/dand.sv \
     tdc/pop_count/pop_count_simple.sv \
     tdc/pulse_gen/tdc_pg.sv \
     tdc/reg/capture_reg.sv
