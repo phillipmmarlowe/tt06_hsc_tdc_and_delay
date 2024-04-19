@@ -41,7 +41,7 @@ module dand #(parameter WIDTH=32) (
         .ones(a_int)
     );
 	
-	assign meas_o[0] = pulse_i;
+	assign ffout_w[0] = pulse_i;
     assign meas_o = ffout_w[WIDTH:1];
 	
 	generate 
