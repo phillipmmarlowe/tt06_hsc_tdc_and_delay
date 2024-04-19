@@ -16,7 +16,7 @@ project:
     - "tdc/tdc_top.sv"
     - "tdc/pulse_gen/tdc_pg.sv"
     - "tdc/delay_line/tdc_delay_line.sv"
-    - "tdc/delay_line/rca.sv"
+    #- "tdc/delay_line/rca.sv"
     - "tdc/delay_line/dand.sv"
     - "tdc/reg/capture_reg.sv"
     - "tdc/pop_count/pop_count_simple.sv"

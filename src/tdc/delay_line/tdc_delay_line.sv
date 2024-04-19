@@ -17,7 +17,7 @@ module delay_line #(
 	
     generate
 	    case(DL_TYPE)
-		    "RCA": begin : dl_genblk
+		    /*"RCA": begin : dl_genblk
                 //(* keep *) logic 
                     //keep_co;
 			    rca #(.WIDTH(N)) dl (
@@ -27,7 +27,7 @@ module delay_line #(
 				    .s(dl_out),
 				    .co(keep_co)
 			    );
-            	end
+            	end*/
 		    "DAND": begin : dl_genblk
 		         //(* keep *) logic
                      //keep_co;
