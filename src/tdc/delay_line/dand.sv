@@ -29,24 +29,24 @@ module const_ones #(parameter N=64) (
 endmodule
 */
 
-module dand #(parameter WIDTH_p=32) ( 
+module dand #(parameter WIDTH=32) ( 
 	input 			    pulse_i,
 	output [WIDTH_p-1:0]	meas_o
 );
     
-	(* keep *) wire [WIDTH_p:0] ffout_w;
-	(* keep *) wire [WIDTH_p-1:0] a_int;
+	(* keep *) wire [WIDTH:0] ffout_w;
+	(* keep *) wire [WIDTH-1:0] a_int;
 	
-	const_ones #(.N(WIDTH_p)) ones(
+	const_ones #(.N(WIDTH)) ones(
         .ones(a_int)
     );
 	
 	assign ffout_w[0] = pulse_i;
-    assign ffout_o = ffout_w[WIDTH_p:1];
+    assign ffout_o = ffout_w[WIDTH:1];
 	
 	generate 
 		genvar i;
-		for(i=0; i<WIDTH_p; i=i+1) begin : dand_genblk
+		for(i=0; i<WIDTH; i=i+1) begin : dand_genblk
 		    `AND_CELL DA ( 
                 .X(ffout_w[i+1]), 
                 .A(a_int[i]), 
