@@ -35,9 +35,9 @@ module dand #(parameter WIDTH_p=32) (
 );
     
 	(* keep *) wire [WIDTH_p:0] ffout_w;
-	(* keep *) wire [WIDTH_p-1:0]
+	(* keep *) wire [WIDTH_p-1:0] a_int;
 	
-	const_ones #(.N(WIDTH)) ones_dand(
+	const_ones #(.N(WIDTH)) ones(
         .ones(a_int)
     );
 	
