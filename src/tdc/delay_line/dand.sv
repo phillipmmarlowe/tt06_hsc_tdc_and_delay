@@ -31,7 +31,7 @@ endmodule
 
 module dand #(parameter WIDTH=32) ( 
 	input 			    pulse_i,
-	output [WIDTH_p-1:0]	meas_o
+	output [WIDTH-1:0]	meas_o
 );
     
 	(* keep *) wire [WIDTH:0] ffout_w;
