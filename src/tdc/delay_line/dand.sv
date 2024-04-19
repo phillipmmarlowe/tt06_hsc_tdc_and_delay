@@ -37,7 +37,7 @@ module dand #(parameter WIDTH_p=32) (
 	(* keep *) wire [WIDTH_p:0] ffout_w;
 	(* keep *) wire [WIDTH_p-1:0]
 	
-	const_ones #(.N(WIDTH)) ones(
+	const_ones #(.N(WIDTH)) ones_dand(
         .ones(a_int)
     );
 	
@@ -49,7 +49,7 @@ module dand #(parameter WIDTH_p=32) (
 		for(i=0; i<WIDTH_p; i=i+1) begin : dand_genblk
 		    `AND_CELL DA ( 
                 .X(ffout_w[i+1]), 
-                .A(a_int), 
+                .A(a_int[i]), 
                 .B(ffout_w[i])
                 `ifdef USE_POWER_PINS
                     , .VGND(VGND)
