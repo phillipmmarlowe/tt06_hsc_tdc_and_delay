@@ -8,7 +8,7 @@ Description: Guaranteed to be an and chain independent of inputs
 `define AND_CELL sky130_fd_sc_hd__and2_1  
 `timescale 1ns/1ps
 
-
+/*
 module const_ones #(parameter N=64) (
     output [N-1:0] ones
 );
@@ -27,7 +27,7 @@ module const_ones #(parameter N=64) (
         end
     endgenerate
 endmodule
-
+*/
 
 module dand #(parameter WIDTH_p=32) ( 
 	input 			    pulse_i,
