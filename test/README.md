@@ -16,6 +16,7 @@ make
 ```
 
 To run gatelevel simulation, first harden your project and copy `../runs/wokwi/results/final/verilog/gl/{your_module_name}.v` to `gate_level_netlist.v`.
+Your module name is probably tt_um_hsc_tdc.v
 
 Then run:
 

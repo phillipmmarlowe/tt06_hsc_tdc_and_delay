@@ -6,7 +6,7 @@ Description: Guaranteed to be an and chain independent of inputs
      Author: Phillip Marlowe (@phillipmmarlowe)
 */
 `define AND_CELL sky130_fd_sc_hd__and2_1  
-`timescale 1ns/1ps
+//`timescale 1ns/1ps
 
 /*
 module const_ones #(parameter N=64) (

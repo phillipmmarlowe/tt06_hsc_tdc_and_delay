@@ -16,8 +16,7 @@ PROJECT_SOURCES = \
     tt_um_hsc_tdc.sv \
     tdc/tdc_top.sv \
     tdc/delay_line/tdc_delay_line.sv \
-    tdc/delay_line/rca.sv \
-	tdc/delay_line/dand.sv \
+    tdc/delay_line/dand.sv \
     tdc/pop_count/pop_count_simple.sv \
     tdc/pulse_gen/tdc_pg.sv \
     tdc/reg/capture_reg.sv
@@ -133,7 +132,7 @@ else
         COMPILE_ARGS     += -DUNIT_DELAY=\#1
         VERILOG_SOURCES  += $(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v
         VERILOG_SOURCES  += $(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v
-        VERILOG_SOURCES  += $(PWD)/gate_level_netlist.v
+        VERILOG_SOURCES  += $(PWD)/../runs/wokwi/results/final/verilog/gl/tt_um_hsc_tdc.v
 
     endif
 

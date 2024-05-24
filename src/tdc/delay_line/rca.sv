@@ -83,7 +83,7 @@ module const_zeros #(parameter N=64) (
 endmodule
 
 
-module rca_dl #(parameter WIDTH=32) ( 
+module rca #(parameter WIDTH=32) ( 
 	input 			    pulse,
 	output  [WIDTH-1:0] meas
 );
